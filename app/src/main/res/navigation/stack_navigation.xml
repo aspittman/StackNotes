@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/stack_navigation"
+    app:startDestination="@+id/nav_stack">
+
+    <fragment
+        android:id="@+id/nav_stack"
+        android:name="com.affinityapps.stacknotes.ui.stack.StackFragment"
+        android:label="@string/menu_stack"
+        tools:layout="@layout/fragment_stack" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.affinityapps.stacknotes.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.affinityapps.stacknotes.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+</navigation>

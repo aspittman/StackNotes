@@ -1,4 +1,4 @@
-package com.affinityapps.stacknotes
+package com.affinityapps.stacknotes.ui.stack
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

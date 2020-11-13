@@ -1,4 +1,4 @@
-package com.affinityapps.stacknotes
+package com.affinityapps.stacknotes.ui.stack
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
+import com.affinityapps.stacknotes.R
 import com.affinityapps.stacknotes.databinding.FragmentStackBinding
 
 class StackFragment : Fragment() {
