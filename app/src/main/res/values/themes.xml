@@ -19,7 +19,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.NavigationExample.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.StackNotes.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="Theme.NavigationExample.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.StackNotes.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
