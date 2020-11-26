@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
 import com.affinityapps.stacknotes.R
 import com.affinityapps.stacknotes.databinding.FragmentStackBinding
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class StackFragment : Fragment() {
     private var _binding: FragmentStackBinding? = null
@@ -20,7 +21,7 @@ class StackFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentStackBinding.inflate(inflater, container, false)
 
         galleryData = ArrayList()
@@ -33,11 +34,22 @@ class StackFragment : Fragment() {
         galleryAdapter = StackAdapter(galleryData)
         binding.stackRecyclerView.apply {
             setHasFixedSize(true)
-            layoutManager = GridLayoutManager(context, 3)
+            layoutManager = GridLayoutManager(activity, 3)
             adapter = StackAdapter(galleryData)
             itemAnimator = DefaultItemAnimator()
         }
+
+        enableButtonClick()
         return binding.root
+    }
+
+    private fun enableButtonClick() {
+        val fab: FloatingActionButton = binding.fab
+        fab.setOnClickListener {
+            val position = galleryData.size
+            galleryData.add(position, Stack(R.drawable.ic_menu_send))
+            galleryAdapter.notifyDataSetChanged()
+        }
     }
 
     override fun onDestroyView() {

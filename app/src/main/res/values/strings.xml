@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">StackNotes</string>
+    <string name="menu_stack">Stack</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+<!--Navigation Labels    -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -8,7 +13,6 @@
     <string name="add_note_description">Add note button</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_stack">Stack</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+<!--Content Descriptions-->
+    <string name="note_select">Added Note Select</string>
 </resources>
