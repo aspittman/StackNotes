@@ -1,5 +1,6 @@
 package com.affinityapps.stacknotes.ui.stack
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -12,8 +13,8 @@ class StackAdapter(private val notesArrayList: List<Stack>
 
     inner class StackItemsViewHolder(binding: StackListItemsBinding) :
             RecyclerView.ViewHolder(binding.root) {
-        val playerImage: ImageView = binding.playerImageIcon
 
+        var playerImage: ImageView = binding.playerImageIcon
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StackItemsViewHolder {
@@ -27,6 +28,7 @@ class StackAdapter(private val notesArrayList: List<Stack>
     override fun onBindViewHolder(holder: StackItemsViewHolder, position: Int) {
         val stack = notesArrayList[position]
         holder.playerImage.setImageResource(stack.noteImageIcon)
+        Log.d("Adapter", "Position is at $position")
     }
 
     override fun getItemCount() = notesArrayList.size

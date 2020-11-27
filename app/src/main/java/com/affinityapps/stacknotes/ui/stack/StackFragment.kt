@@ -1,6 +1,7 @@
 package com.affinityapps.stacknotes.ui.stack
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +18,7 @@ class StackFragment : Fragment() {
 
     private lateinit var galleryData: ArrayList<Stack>
     private lateinit var galleryAdapter: StackAdapter
+    private lateinit var fab: FloatingActionButton
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,20 +37,21 @@ class StackFragment : Fragment() {
         binding.stackRecyclerView.apply {
             setHasFixedSize(true)
             layoutManager = GridLayoutManager(activity, 3)
-            adapter = StackAdapter(galleryData)
+            adapter = galleryAdapter
             itemAnimator = DefaultItemAnimator()
         }
-
         enableButtonClick()
         return binding.root
     }
 
     private fun enableButtonClick() {
-        val fab: FloatingActionButton = binding.fab
+        fab = binding.fab
         fab.setOnClickListener {
             val position = galleryData.size
             galleryData.add(position, Stack(R.drawable.ic_menu_send))
-            galleryAdapter.notifyDataSetChanged()
+            galleryAdapter.notifyItemInserted(position)
+            Log.i("AddTest", "Position is $position")
+            Log.i("ArrayTest", "Position is $galleryData")
         }
     }
 
