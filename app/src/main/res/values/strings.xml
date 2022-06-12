@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">StackNotes</string>
+    <string name="fab_description">Floating Action Button Menu</string>
+</resources>
