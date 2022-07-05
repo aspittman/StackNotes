@@ -8,14 +8,11 @@
     tools:context=".MainActivity">
 
 <!--Will be a recyclerview-->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/main_grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
     <com.kelmer.android.fabmenu.linear.AdvancedFabMenu
         android:id="@+id/fab"
