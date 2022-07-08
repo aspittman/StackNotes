@@ -7,8 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-<!--Will be a recyclerview-->
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/main_grid"
         android:layout_width="match_parent"
