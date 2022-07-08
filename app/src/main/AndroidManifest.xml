@@ -14,9 +14,19 @@
         android:theme="@style/Theme.StackNotes"
         tools:targetApi="31">
         <activity
-            android:name=".NoteActivity"
+            android:name=".layouts.NoteActivity"
             android:exported="false"
             android:label="@string/title_activity_note"
+            android:theme="@style/Theme.StackNotes.NoActionBar" />
+        <activity
+            android:name=".layouts.BulletActivity"
+            android:exported="false"
+            android:label="@string/title_activity_bullet"
+            android:theme="@style/Theme.StackNotes.NoActionBar" />
+        <activity
+            android:name=".layouts.OutlineActivity"
+            android:exported="false"
+            android:label="@string/title_activity_outline"
             android:theme="@style/Theme.StackNotes.NoActionBar" />
         <activity
             android:name=".MainActivity"

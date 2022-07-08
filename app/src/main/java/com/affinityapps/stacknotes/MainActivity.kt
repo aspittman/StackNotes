@@ -9,6 +9,9 @@ import android.view.MenuItem
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.affinityapps.stacknotes.databinding.ActivityMainBinding
+import com.affinityapps.stacknotes.layouts.BulletActivity
+import com.affinityapps.stacknotes.layouts.NoteActivity
+import com.affinityapps.stacknotes.layouts.OutlineActivity
 
 class MainActivity : AppCompatActivity() {
 
