@@ -1,4 +1,4 @@
-package com.affinityapps.stacknotes.layouts
+package com.affinityapps.stacknotes.layouts.note
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

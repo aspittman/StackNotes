@@ -1,4 +1,4 @@
-package com.affinityapps.stacknotes
+package com.affinityapps.stacknotes.home
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,12 +8,15 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.affinityapps.stacknotes.R
 import com.affinityapps.stacknotes.databinding.ActivityMainBinding
-import com.affinityapps.stacknotes.layouts.BulletActivity
-import com.affinityapps.stacknotes.layouts.NoteActivity
-import com.affinityapps.stacknotes.layouts.OutlineActivity
+import com.affinityapps.stacknotes.layouts.bullet.BulletActivity
+import com.affinityapps.stacknotes.layouts.note.NoteActivity
+import com.affinityapps.stacknotes.layouts.outline.OutlineActivity
+import com.affinityapps.stacknotes.model.HomeImages
+import androidx.recyclerview.widget.DefaultItemAnimator
 
-class MainActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -22,24 +25,34 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val randomList = ArrayList<String>()
-        randomList.add("aaaaa")
-        randomList.add("bbbbb")
-        randomList.add("ccccc")
-        randomList.add("ddddd")
-        randomList.add("eeeee")
+        val homeImageList = ArrayList<HomeImages>()
+        homeImageList.add(HomeImages(R.drawable.ic_scatter))
+        homeImageList.add(HomeImages(R.drawable.ic_science))
+        homeImageList.add(HomeImages(R.drawable.ic_scatter))
+        homeImageList.add(HomeImages(R.drawable.ic_science))
+        homeImageList.add(HomeImages(R.drawable.ic_scatter))
+        homeImageList.add(HomeImages(R.drawable.ic_science))
+        homeImageList.add(HomeImages(R.drawable.ic_science))
+        homeImageList.add(HomeImages(R.drawable.ic_scatter))
+        homeImageList.add(HomeImages(R.drawable.ic_science))
+        homeImageList.add(HomeImages(R.drawable.ic_scatter))
+        homeImageList.add(HomeImages(R.drawable.ic_science))
+        homeImageList.add(HomeImages(R.drawable.ic_scatter))
+        homeImageList.add(HomeImages(R.drawable.ic_science))
+        homeImageList.add(HomeImages(R.drawable.ic_scatter))
 
        val recyclerView:RecyclerView = findViewById(R.id.main_grid)
         GridLayoutManager(
-            this, // context
-            2, // span count
-            RecyclerView.VERTICAL, // orientation
-            false // reverse layout
+            this,
+            2,
+            RecyclerView.VERTICAL,
+            false
         ).apply {
-            // specify the layout manager for recycler view
+            recyclerView.setHasFixedSize(true)
             recyclerView.layoutManager = this
+            recyclerView.itemAnimator = DefaultItemAnimator()
         }
-        recyclerView.adapter = NoteAdapter(randomList)
+        recyclerView.adapter = HomeAdapter(homeImageList)
 
         binding.fab1.setOnClickListener { val intent = Intent(this, NoteActivity::class.java)
             startActivity(intent)

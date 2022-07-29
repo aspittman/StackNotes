@@ -1,4 +1,4 @@
-package com.affinityapps.stacknotes.layouts
+package com.affinityapps.stacknotes.layouts.bullet
 
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +13,7 @@ class BulletAdapter (private val dataSet: ArrayList<String>) :
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val bullet: TextView
-        val userText : EditText
+        private val userText : EditText
 
         init {
             bullet = view.findViewById(R.id.text_bullet)

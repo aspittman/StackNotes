@@ -1,18 +1,9 @@
-package com.affinityapps.stacknotes.layouts
+package com.affinityapps.stacknotes.layouts.bullet
 
 import android.os.Bundle
-import android.text.SpannableString
-import android.text.Spanned
-import android.text.style.BulletSpan
-import android.view.KeyEvent
-import android.view.View
-import android.widget.EditText
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.affinityapps.stacknotes.NoteAdapter
 import com.affinityapps.stacknotes.R
 import com.affinityapps.stacknotes.databinding.ActivityBulletBinding
 

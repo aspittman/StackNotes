@@ -1,4 +1,4 @@
-package com.affinityapps.stacknotes
+package com.affinityapps.stacknotes.home
 
 class SettingsActivity {
 
