@@ -29,25 +29,25 @@
         android:id="@+id/fab1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@android:drawable/arrow_down_float"
+        android:src="@drawable/ic_note"
         fab:fab_size="mini"
-        fab:fab_label="Description 1" />
+        fab:fab_label="Notes" />
 
     <com.kelmer.android.fabmenu.fab.FloatingActionButton
         android:id="@+id/fab2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@android:drawable/btn_minus"
+        android:src="@drawable/ic_list"
         fab:fab_size="mini"
-        fab:fab_label="Description 2" />
+        fab:fab_label="Lists" />
 
     <com.kelmer.android.fabmenu.fab.FloatingActionButton
         android:id="@+id/fab3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@android:drawable/btn_plus"
+        android:src="@drawable/ic_outline"
         fab:fab_size="mini"
-        fab:fab_label="Description 3" />
+        fab:fab_label="Outline" />
 
     </com.kelmer.android.fabmenu.linear.AdvancedFabMenu>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

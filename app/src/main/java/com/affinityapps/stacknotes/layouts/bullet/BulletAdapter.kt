@@ -1,10 +1,7 @@
 package com.affinityapps.stacknotes.layouts.bullet
 
 import android.util.Log
-import android.view.KeyEvent
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.EditText
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -16,6 +13,7 @@ class BulletAdapter (private val dataSet: ArrayList<String>,
     RecyclerView.Adapter<BulletAdapter.ViewHolder>() {
 
     class ViewHolder(view: View, bulletInterface: BulletInterface) : RecyclerView.ViewHolder(view) {
+
         val bullet: TextView
         private val userText : EditText
 
