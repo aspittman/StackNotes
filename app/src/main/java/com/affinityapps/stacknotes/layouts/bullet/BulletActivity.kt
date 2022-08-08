@@ -17,7 +17,7 @@ class BulletActivity : AppCompatActivity(), BulletInterface {
 
     private lateinit var binding: ActivityBulletBinding
     private val randomList = ArrayList<String>()
-    private val adapter = BulletAdapter(randomList, this)
+    private val adapter = BulletAdapter(randomList, this, this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,8 +28,6 @@ class BulletActivity : AppCompatActivity(), BulletInterface {
         recyclerView.adapter = adapter
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        //We need textViews with positions here
-        //registerForContextMenu()
 
         randomList.add("\u2022 ")
         randomList.add("\u2022 ")

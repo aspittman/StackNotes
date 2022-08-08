@@ -9,10 +9,11 @@ import com.affinityapps.stacknotes.R
 
 
 class BulletAdapter (private val dataSet: ArrayList<String>,
-                     private var bulletInterface: BulletInterface) :
+                     private var bulletInterface: BulletInterface,
+                     private val bulletActivity: BulletActivity) :
     RecyclerView.Adapter<BulletAdapter.ViewHolder>() {
 
-    class ViewHolder(view: View, bulletInterface: BulletInterface) : RecyclerView.ViewHolder(view) {
+    inner class ViewHolder(view: View, bulletInterface: BulletInterface) : RecyclerView.ViewHolder(view) {
 
         val bullet: TextView
         private val userText : EditText
@@ -20,8 +21,10 @@ class BulletAdapter (private val dataSet: ArrayList<String>,
         init {
             bullet = view.findViewById(R.id.text_bullet)
             userText = view.findViewById(R.id.text_edit)
+            bullet.setOnCreateContextMenuListener(bulletActivity)
+            bulletActivity.registerForContextMenu(bullet)
 
-            userText.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
+            userText.setOnKeyListener(View.OnKeyListener { _, keyCode, event ->
                 if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
                     val position: Int = adapterPosition
                     bulletInterface.rowToAdd(position + 1)
