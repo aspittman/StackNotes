@@ -16,8 +16,8 @@ import com.affinityapps.stacknotes.databinding.ActivityBulletBinding
 class BulletActivity : AppCompatActivity(), BulletInterface {
 
     private lateinit var binding: ActivityBulletBinding
-    private val randomList = ArrayList<String>()
-    private val adapter = BulletAdapter(randomList, this, this)
+    private val bulletList = ArrayList<String>()
+    private val adapter = BulletAdapter(bulletList, this, this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,40 +29,44 @@ class BulletActivity : AppCompatActivity(), BulletInterface {
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        randomList.add("\u2022 ")
-        randomList.add("\u2022 ")
-        randomList.add("\u2022 ")
+        bulletList.add("\u2022 ")
+        bulletList.add("\u2022 ")
+        bulletList.add("\u2022 ")
     }
 
     override fun rowToAdd(position: Int) {
-        randomList.add("\u2022 ")
+        bulletList.add("\u2022 ")
         adapter.notifyItemInserted(position + 1)
     }
 
     override fun rowToDelete(position: Int, textFromUser: EditText) {
-        if(textFromUser.length() == 0) {
-            randomList.removeAt(position)
+        if (textFromUser.length() == 0) {
+            bulletList.removeAt(position)
             adapter.notifyItemRemoved(position)
         }
     }
 
-    override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
+    override fun onCreateContextMenu(
+        menu: ContextMenu?,
+        v: View?,
+        menuInfo: ContextMenu.ContextMenuInfo?
+    ) {
         super.onCreateContextMenu(menu, v, menuInfo)
         val inflater = menuInflater
-        inflater.inflate(R.menu.context_menu, menu)
+        inflater.inflate(R.menu.bullet_context_menu, menu)
     }
 
     override fun onContextItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.bullet_menu_option ->{
+            R.id.bullet_menu_option -> {
                 Toast.makeText(applicationContext, "bullet test", Toast.LENGTH_LONG).show()
                 return true
             }
-            R.id.numbers_menu_option ->{
+            R.id.numbers_menu_option -> {
                 Toast.makeText(applicationContext, "number test", Toast.LENGTH_LONG).show()
                 return true
             }
-            R.id.checkbox_menu_option ->{
+            R.id.checkbox_menu_option -> {
                 Toast.makeText(applicationContext, "checkbox test", Toast.LENGTH_LONG).show()
                 return true
             }

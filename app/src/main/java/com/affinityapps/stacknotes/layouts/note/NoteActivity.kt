@@ -2,7 +2,6 @@ package com.affinityapps.stacknotes.layouts.note
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.affinityapps.stacknotes.databinding.ActivityMainBinding
 import com.affinityapps.stacknotes.databinding.ActivityNoteBinding
 
 class NoteActivity : AppCompatActivity() {

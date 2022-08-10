@@ -1,4 +1,4 @@
-package com.affinityapps.stacknotes.layouts.bullet
+package com.affinityapps.stacknotes.layouts.outline
 
 import android.util.Log
 import android.view.KeyEvent
@@ -10,36 +10,35 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.affinityapps.stacknotes.R
 
-
-class BulletAdapter(
-    private val dataSet: ArrayList<String>,
-    private var bulletInterface: BulletInterface,
-    private val bulletActivity: BulletActivity
+class OutlineAdapter(
+    private val outlineDataSet: ArrayList<String>,
+    private var outlineInterface: OutlineInterface,
+    private val outlineActivity: OutlineActivity
 ) :
-    RecyclerView.Adapter<BulletAdapter.ViewHolder>() {
+    RecyclerView.Adapter<OutlineAdapter.ViewHolder>() {
 
-    inner class ViewHolder(view: View, bulletInterface: BulletInterface) :
+    inner class ViewHolder(view: View, outlineInterface: OutlineInterface) :
         RecyclerView.ViewHolder(view) {
 
-        val bullet: TextView
+        val outline: TextView
         private val userText: EditText
 
         init {
-            bullet = view.findViewById(R.id.text_bullet)
-            userText = view.findViewById(R.id.bullet_text_edit)
-            bullet.setOnCreateContextMenuListener(bulletActivity)
-            bulletActivity.registerForContextMenu(bullet)
+            outline = view.findViewById(R.id.text_outline)
+            userText = view.findViewById(R.id.outline_text_edit)
+            outline.setOnCreateContextMenuListener(outlineActivity)
+            outlineActivity.registerForContextMenu(outline)
 
             userText.setOnKeyListener(View.OnKeyListener { _, keyCode, event ->
                 if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
                     val position: Int = adapterPosition
-                    bulletInterface.rowToAdd(position + 1)
+                    outlineInterface.rowToAdd(position + 1)
                     Log.d("TAG", "ENTER KEY WORKS!!!$position")
                     return@OnKeyListener true
                 }
                 if (keyCode == KeyEvent.KEYCODE_DEL && event.action == KeyEvent.ACTION_UP) {
                     val position: Int = adapterPosition
-                    bulletInterface.rowToDelete(position, userText)
+                    outlineInterface.rowToDelete(position, userText)
                     Log.d("TAG", "DELETE KEY WORKS!!!$position")
                     return@OnKeyListener true
                 }
@@ -50,14 +49,14 @@ class BulletAdapter(
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.bullet_page_item, viewGroup, false)
+            .inflate(R.layout.outline_page_item, viewGroup, false)
 
-        return ViewHolder(view, bulletInterface)
+        return ViewHolder(view, outlineInterface)
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        viewHolder.bullet.text = dataSet[position]
+        viewHolder.outline.text = outlineDataSet[position]
     }
 
-    override fun getItemCount() = dataSet.size
+    override fun getItemCount() = outlineDataSet.size
 }

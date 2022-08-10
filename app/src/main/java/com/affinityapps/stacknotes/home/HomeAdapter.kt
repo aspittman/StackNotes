@@ -9,11 +9,11 @@ import com.affinityapps.stacknotes.R
 import com.affinityapps.stacknotes.model.HomeImages
 
 
-class HomeAdapter (private val dataSet: ArrayList<HomeImages>) :
+class HomeAdapter(private val dataSet: ArrayList<HomeImages>) :
     RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val homeImages : ImageView
+        val homeImages: ImageView
 
         init {
             homeImages = view.findViewById(R.id.home_image_views)

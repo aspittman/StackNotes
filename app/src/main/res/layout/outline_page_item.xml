@@ -6,16 +6,16 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/text_bullet"
-        android:text="\u2022 "/>
+        android:id="@+id/text_outline"
+        android:text="I "/>
 
     <EditText
-        android:id="@+id/bullet_text_edit"
+        android:id="@+id/outline_text_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autofillHints="This is a test"
         android:background="@android:color/transparent"
-        android:hint="@string/bullet_notepad_hint"
+        android:hint="Make an Outline"
         android:inputType="textMultiLine|textNoSuggestions"
-        android:layout_toEndOf="@+id/text_bullet"/>
+        android:layout_toEndOf="@+id/text_outline"/>
 </RelativeLayout>
