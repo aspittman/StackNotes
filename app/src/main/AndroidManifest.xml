@@ -17,17 +17,20 @@
             android:name=".layouts.note.NoteActivity"
             android:exported="false"
             android:label="@string/title_activity_note"
-            android:theme="@style/Theme.StackNotes.NoActionBar" />
+            android:theme="@style/Theme.StackNotes"
+            android:parentActivityName=".home.HomeActivity"/>
         <activity
             android:name=".layouts.bullet.BulletActivity"
             android:exported="false"
             android:label="@string/title_activity_bullet"
-            android:theme="@style/Theme.StackNotes.NoActionBar" />
+            android:theme="@style/Theme.StackNotes"
+            android:parentActivityName=".home.HomeActivity"/>
         <activity
             android:name=".layouts.outline.OutlineActivity"
             android:exported="false"
             android:label="@string/title_activity_outline"
-            android:theme="@style/Theme.StackNotes.NoActionBar" />
+            android:theme="@style/Theme.StackNotes"
+            android:parentActivityName=".home.HomeActivity"/>
         <activity
             android:name=".home.HomeActivity"
             android:exported="true">
