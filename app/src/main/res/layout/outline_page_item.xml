@@ -16,6 +16,6 @@
         android:autofillHints="This is a test"
         android:background="@android:color/transparent"
         android:hint="Make an Outline"
-        android:inputType="textMultiLine|textNoSuggestions"
+        android:inputType="textMultiLine|textFilter"
         android:layout_toEndOf="@+id/text_outline"/>
 </RelativeLayout>

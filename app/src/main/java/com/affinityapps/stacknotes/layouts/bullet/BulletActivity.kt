@@ -30,17 +30,15 @@ class BulletActivity : AppCompatActivity(), BulletInterface {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         bulletList.add("\u2022 ")
-        bulletList.add("\u2022 ")
-        bulletList.add("\u2022 ")
     }
 
-    override fun rowToAdd(position: Int) {
-        bulletList.add("\u2022 ")
+    override fun rowToAdd(position: Int, textFromUser: EditText) {
+        bulletList.add(position, "\u2022 ")
         adapter.notifyItemInserted(position + 1)
     }
 
     override fun rowToDelete(position: Int, textFromUser: EditText) {
-        if (textFromUser.length() == 0) {
+        if (textFromUser.length() == 0 && bulletList.size != 1) {
             bulletList.removeAt(position)
             adapter.notifyItemRemoved(position)
         }

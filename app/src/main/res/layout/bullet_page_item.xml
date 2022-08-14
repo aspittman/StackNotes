@@ -7,7 +7,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/text_bullet"
-        android:text="\u2022 "/>
+        android:text="@string/bullet_for_list"/>
 
     <EditText
         android:id="@+id/bullet_text_edit"
@@ -16,6 +16,6 @@
         android:autofillHints="This is a test"
         android:background="@android:color/transparent"
         android:hint="@string/bullet_notepad_hint"
-        android:inputType="textMultiLine|textNoSuggestions"
-        android:layout_toEndOf="@+id/text_bullet"/>
+        android:inputType="textMultiLine|textFilter"
+        android:layout_toEndOf="@+id/text_bullet" />
 </RelativeLayout>

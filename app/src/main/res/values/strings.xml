@@ -5,6 +5,9 @@
     <string name="title_activity_bullet">BulletActivity</string>
     <string name="title_activity_outline">OutlineActivity</string>
 
+    <!-- Strings used for bullet list details -->
+    <string name="bullet_for_list">\u2022</string>
+
     <!-- Strings used for fragments for toolbar -->
     <string name="app_settings">Settings</string>
 

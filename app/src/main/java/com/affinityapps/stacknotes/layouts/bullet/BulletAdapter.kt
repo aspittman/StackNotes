@@ -33,14 +33,12 @@ class BulletAdapter(
             userText.setOnKeyListener(View.OnKeyListener { _, keyCode, event ->
                 if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
                     val position: Int = adapterPosition
-                    bulletInterface.rowToAdd(position + 1)
-                    Log.d("TAG", "ENTER KEY WORKS!!!$position")
+                    bulletInterface.rowToAdd(position, userText)
                     return@OnKeyListener true
                 }
                 if (keyCode == KeyEvent.KEYCODE_DEL && event.action == KeyEvent.ACTION_UP) {
                     val position: Int = adapterPosition
                     bulletInterface.rowToDelete(position, userText)
-                    Log.d("TAG", "DELETE KEY WORKS!!!$position")
                     return@OnKeyListener true
                 }
                 false

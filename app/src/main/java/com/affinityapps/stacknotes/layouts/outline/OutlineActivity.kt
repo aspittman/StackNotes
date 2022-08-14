@@ -28,18 +28,16 @@ class OutlineActivity : AppCompatActivity(), OutlineInterface {
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        outlineList.add("\u2022 ")
-        outlineList.add("\u2022 ")
-        outlineList.add("\u2022 ")
+        outlineList.add("I ")
     }
 
     override fun rowToAdd(position: Int) {
-        outlineList.add("\u2022 ")
-        adapter.notifyItemInserted(position + 1)
+        outlineList.add("II ")
+        adapter.notifyItemInserted(position + 2)
     }
 
     override fun rowToDelete(position: Int, textFromUser: EditText) {
-        if (textFromUser.length() == 0) {
+        if (textFromUser.length() == 0 && outlineList.size != 1) {
             outlineList.removeAt(position)
             adapter.notifyItemRemoved(position)
         }
