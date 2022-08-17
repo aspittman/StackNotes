@@ -30,16 +30,14 @@ class OutlineAdapter(
             outlineActivity.registerForContextMenu(outline)
 
             userText.setOnKeyListener(View.OnKeyListener { _, keyCode, event ->
-                if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
+                if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN) {
                     val position: Int = adapterPosition
                     outlineInterface.rowToAdd(position + 1)
-                    Log.d("TAG", "ENTER KEY WORKS!!!$position")
                     return@OnKeyListener true
                 }
                 if (keyCode == KeyEvent.KEYCODE_DEL && event.action == KeyEvent.ACTION_UP) {
                     val position: Int = adapterPosition
                     outlineInterface.rowToDelete(position, userText)
-                    Log.d("TAG", "DELETE KEY WORKS!!!$position")
                     return@OnKeyListener true
                 }
                 false

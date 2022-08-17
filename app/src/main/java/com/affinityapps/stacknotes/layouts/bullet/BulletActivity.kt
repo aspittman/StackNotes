@@ -1,7 +1,9 @@
 package com.affinityapps.stacknotes.layouts.bullet
 
 import android.os.Bundle
+import android.util.Log
 import android.view.ContextMenu
+import android.view.KeyEvent
 import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
@@ -33,8 +35,9 @@ class BulletActivity : AppCompatActivity(), BulletInterface {
     }
 
     override fun rowToAdd(position: Int, textFromUser: EditText) {
-        bulletList.add(position, "\u2022 ")
-        adapter.notifyItemInserted(position + 1)
+        val addPosition = position + 1
+        bulletList.add( "\u2022 ")
+        adapter.notifyItemInserted(addPosition)
     }
 
     override fun rowToDelete(position: Int, textFromUser: EditText) {

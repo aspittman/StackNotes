@@ -1,6 +1,5 @@
 package com.affinityapps.stacknotes.layouts.bullet
 
-import android.util.Log
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
@@ -31,7 +30,7 @@ class BulletAdapter(
             bulletActivity.registerForContextMenu(bullet)
 
             userText.setOnKeyListener(View.OnKeyListener { _, keyCode, event ->
-                if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
+                if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN) {
                     val position: Int = adapterPosition
                     bulletInterface.rowToAdd(position, userText)
                     return@OnKeyListener true
