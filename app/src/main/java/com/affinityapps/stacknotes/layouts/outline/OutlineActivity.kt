@@ -37,7 +37,7 @@ class OutlineActivity : AppCompatActivity(), OutlineInterface {
     }
 
     override fun rowToDelete(position: Int, textFromUser: EditText) {
-        if (textFromUser.length() == 0 && outlineList.size != 1) {
+        if (textFromUser.length() == 0 && position >= 0 && outlineList.size != 1) {
             outlineList.removeAt(position)
             adapter.notifyItemRemoved(position)
         }

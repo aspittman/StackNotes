@@ -41,7 +41,7 @@ class BulletActivity : AppCompatActivity(), BulletInterface {
     }
 
     override fun rowToDelete(position: Int, textFromUser: EditText) {
-        if (textFromUser.length() == 0 && bulletList.size != 1) {
+        if (textFromUser.length() == 0 && position >= 0 && bulletList.size != 1) {
             bulletList.removeAt(position)
             adapter.notifyItemRemoved(position)
         }
