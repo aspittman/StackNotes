@@ -35,6 +35,7 @@ class BulletActivity : AppCompatActivity(), BulletInterface {
     override fun rowToAdd(position: Int, textFromUser: EditText) {
         val addPosition = position + 1
         bulletList.add(BulletItems("\u2022 ", ""))
+        textFromUser.setSelection(0)
         adapter.notifyItemInserted(addPosition)
     }
 

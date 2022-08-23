@@ -57,7 +57,7 @@ class BulletAdapter(
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val bulletItems: BulletItems = dataSet[viewHolder.adapterPosition]
         viewHolder.bullet.text = bulletItems.bullet
-        viewHolder.userText.setText(bulletItems.userText)
+        viewHolder.userText.requestFocus()
     }
 
     override fun getItemCount() = dataSet.size
