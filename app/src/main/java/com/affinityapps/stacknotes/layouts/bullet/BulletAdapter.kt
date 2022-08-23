@@ -8,10 +8,12 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.affinityapps.stacknotes.R
+import com.affinityapps.stacknotes.model.BulletItems
+import com.affinityapps.stacknotes.model.HomeImages
 
 
 class BulletAdapter(
-    private val dataSet: ArrayList<String>,
+    private val dataSet: ArrayList<BulletItems>,
     private var bulletInterface: BulletInterface,
     private val bulletActivity: BulletActivity
 ) :
@@ -21,7 +23,7 @@ class BulletAdapter(
         RecyclerView.ViewHolder(view) {
 
         val bullet: TextView
-        private val userText: EditText
+        val userText: EditText
 
         init {
             bullet = view.findViewById(R.id.text_bullet)
@@ -53,7 +55,9 @@ class BulletAdapter(
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        viewHolder.bullet.text = dataSet[position]
+        val bulletItems: BulletItems = dataSet[viewHolder.adapterPosition]
+        viewHolder.bullet.text = bulletItems.bullet
+        viewHolder.userText.setText(bulletItems.userText)
     }
 
     override fun getItemCount() = dataSet.size

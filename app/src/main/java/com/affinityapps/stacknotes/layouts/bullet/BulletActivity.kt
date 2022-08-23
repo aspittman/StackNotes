@@ -2,10 +2,7 @@ package com.affinityapps.stacknotes.layouts.bullet
 
 import android.os.Bundle
 import android.util.Log
-import android.view.ContextMenu
-import android.view.KeyEvent
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -13,12 +10,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.affinityapps.stacknotes.R
 import com.affinityapps.stacknotes.databinding.ActivityBulletBinding
+import com.affinityapps.stacknotes.model.BulletItems
 
 
 class BulletActivity : AppCompatActivity(), BulletInterface {
 
     private lateinit var binding: ActivityBulletBinding
-    private val bulletList = ArrayList<String>()
+    private val bulletList = ArrayList<BulletItems>()
     private val adapter = BulletAdapter(bulletList, this, this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,12 +29,12 @@ class BulletActivity : AppCompatActivity(), BulletInterface {
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        bulletList.add("\u2022 ")
+        bulletList.add(BulletItems("\u2022 ", ""))
     }
 
     override fun rowToAdd(position: Int, textFromUser: EditText) {
         val addPosition = position + 1
-        bulletList.add( "\u2022 ")
+        bulletList.add(BulletItems("\u2022 ", ""))
         adapter.notifyItemInserted(addPosition)
     }
 
@@ -47,7 +45,31 @@ class BulletActivity : AppCompatActivity(), BulletInterface {
         }
     }
 
-    override fun onCreateContextMenu(
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.bullet_options_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.bullet_list_option -> {
+                Toast.makeText(applicationContext, "bullet list test", Toast.LENGTH_LONG).show()
+                true
+            }
+            R.id.numbers_list_option -> {
+                Toast.makeText(applicationContext, "number list test", Toast.LENGTH_LONG).show()
+                true
+            }
+            R.id.checkbox_list_option -> {
+                Toast.makeText(applicationContext, "checkbox list test", Toast.LENGTH_LONG).show()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun onCreateContextMenu (
         menu: ContextMenu?,
         v: View?,
         menuInfo: ContextMenu.ContextMenuInfo?

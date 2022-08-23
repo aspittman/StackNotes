@@ -2,6 +2,10 @@ package com.affinityapps.stacknotes.home
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
@@ -23,20 +27,20 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val homeImageList = ArrayList<HomeImages>()
-        homeImageList.add(HomeImages(R.drawable.ic_scatter))
-        homeImageList.add(HomeImages(R.drawable.ic_science))
-        homeImageList.add(HomeImages(R.drawable.ic_scatter))
-        homeImageList.add(HomeImages(R.drawable.ic_science))
-        homeImageList.add(HomeImages(R.drawable.ic_scatter))
-        homeImageList.add(HomeImages(R.drawable.ic_science))
-        homeImageList.add(HomeImages(R.drawable.ic_science))
-        homeImageList.add(HomeImages(R.drawable.ic_scatter))
-        homeImageList.add(HomeImages(R.drawable.ic_science))
-        homeImageList.add(HomeImages(R.drawable.ic_scatter))
-        homeImageList.add(HomeImages(R.drawable.ic_science))
-        homeImageList.add(HomeImages(R.drawable.ic_scatter))
-        homeImageList.add(HomeImages(R.drawable.ic_science))
-        homeImageList.add(HomeImages(R.drawable.ic_scatter))
+        homeImageList.add(HomeImages(R.drawable.ic_note_add))
+        homeImageList.add(HomeImages(R.drawable.ic_note_add))
+        homeImageList.add(HomeImages(R.drawable.ic_note_add))
+        homeImageList.add(HomeImages(R.drawable.ic_note_add))
+        homeImageList.add(HomeImages(R.drawable.ic_note_add))
+        homeImageList.add(HomeImages(R.drawable.ic_note_add))
+        homeImageList.add(HomeImages(R.drawable.ic_note_add))
+        homeImageList.add(HomeImages(R.drawable.ic_note_add))
+        homeImageList.add(HomeImages(R.drawable.ic_note_add))
+        homeImageList.add(HomeImages(R.drawable.ic_note_add))
+        homeImageList.add(HomeImages(R.drawable.ic_note_add))
+        homeImageList.add(HomeImages(R.drawable.ic_note_add))
+        homeImageList.add(HomeImages(R.drawable.ic_note_add))
+        homeImageList.add(HomeImages(R.drawable.ic_note_add))
 
         val recyclerView: RecyclerView = findViewById(R.id.main_grid)
         GridLayoutManager(
@@ -64,6 +68,23 @@ class HomeActivity : AppCompatActivity() {
         binding.fab3.setOnClickListener {
             val intent = Intent(this, OutlineActivity::class.java)
             startActivity(intent)
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.settings_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.settings -> {
+                intent = Intent(this, SettingsActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }

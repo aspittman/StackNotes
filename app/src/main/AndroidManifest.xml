@@ -32,6 +32,12 @@
             android:theme="@style/Theme.StackNotes"
             android:parentActivityName=".home.HomeActivity"/>
         <activity
+            android:name=".home.SettingsActivity"
+            android:exported="false"
+            android:label="@string/app_settings"
+            android:theme="@style/Theme.StackNotes"
+            android:parentActivityName=".home.HomeActivity"/>
+        <activity
             android:name=".home.HomeActivity"
             android:exported="true">
             <intent-filter>

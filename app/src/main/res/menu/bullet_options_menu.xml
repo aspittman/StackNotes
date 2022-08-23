@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/bullet_list_option"
+        android:title="Bullet List"
+        app:showAsAction="never"/>
+    <item android:id="@+id/numbers_list_option"
+        android:title="Number List"
+        app:showAsAction="never" />
+    <item android:id="@+id/checkbox_list_option"
+        android:title="CheckBox List"
+        app:showAsAction="never" />
+</menu>
