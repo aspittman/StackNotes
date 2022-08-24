@@ -21,7 +21,7 @@ class OutlineAdapter(
         RecyclerView.ViewHolder(view) {
 
         val outline: TextView
-        private val userText: EditText
+        val userText: EditText
 
         init {
             outline = view.findViewById(R.id.text_outline)
@@ -54,6 +54,7 @@ class OutlineAdapter(
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         viewHolder.outline.text = outlineDataSet[position]
+        viewHolder.userText.requestFocus()
     }
 
     override fun getItemCount() = outlineDataSet.size
