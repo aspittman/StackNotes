@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
@@ -15,7 +14,6 @@ import com.affinityapps.stacknotes.databinding.ActivityMainBinding
 import com.affinityapps.stacknotes.layouts.bullet.BulletActivity
 import com.affinityapps.stacknotes.layouts.note.NoteActivity
 import com.affinityapps.stacknotes.layouts.outline.OutlineActivity
-import com.affinityapps.stacknotes.model.HomeImages
 
 class HomeActivity : AppCompatActivity() {
 

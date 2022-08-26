@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.affinityapps.stacknotes.R
-import com.affinityapps.stacknotes.model.HomeImages
 
 
 class HomeAdapter(private val dataSet: ArrayList<HomeImages>) :

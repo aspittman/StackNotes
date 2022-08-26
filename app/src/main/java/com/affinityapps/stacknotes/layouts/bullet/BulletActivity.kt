@@ -1,7 +1,6 @@
 package com.affinityapps.stacknotes.layouts.bullet
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import android.widget.EditText
 import android.widget.Toast
@@ -10,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.affinityapps.stacknotes.R
 import com.affinityapps.stacknotes.databinding.ActivityBulletBinding
-import com.affinityapps.stacknotes.model.BulletItems
 
 
 class BulletActivity : AppCompatActivity(), BulletInterface {

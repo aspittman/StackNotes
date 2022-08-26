@@ -8,8 +8,6 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.affinityapps.stacknotes.R
-import com.affinityapps.stacknotes.model.BulletItems
-import com.affinityapps.stacknotes.model.HomeImages
 
 
 class BulletAdapter(
