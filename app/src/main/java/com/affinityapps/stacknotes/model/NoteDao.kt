@@ -12,7 +12,11 @@ interface NoteDao {
     @Query("SELECT * FROM notes")
     fun getAllNotes(): LiveData<List<NoteEntity>>
 
-    @Update
+    @Query("SELECT * from notes where noteId = noteId")
+    fun findNotes(noteId : String)
+
+    //Idea here is note is ignored if it's already the same
+    @Update(onConflict = OnConflictStrategy.IGNORE)
     fun updateNotes(notes: NoteEntity)
 
     @Delete
